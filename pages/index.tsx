@@ -40,6 +40,7 @@ export default function Home({ repos }: HomeProps) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
         <meta name="theme-color" content="#000" />
+        <meta name="description" content="Frontend enthusiast." />
         <title>nv &bull; home</title>
         <link rel="icon" type="image/jpg" href="/profile.jpg" />
       </Head>

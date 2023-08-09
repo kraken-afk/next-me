@@ -25,9 +25,9 @@ export default function ProjectCard(props: ProjectCardProps) {
         {props.title}
       </span>
       <p>{props.description}</p>
-      <a className="inline-block mt-3" target="_blank" href={props.url} onClick={(event) => event.stopPropagation()}>
+      { props.url !== "" ? <a className="inline-block mt-3" target="_blank" href={props.url} onClick={(event) => event.stopPropagation()}>
         {props.url}
-      </a>
+      </a> : <div className="mt-3"></div> }
       <div
         style={{ backgroundColor: props.color }}
         className={`lang w-[3rem] h-[1.2rem] my-3 absolute top-[6px] left-[.8rem] z-0`}
