@@ -8,11 +8,12 @@ interface ProjectCardProps {
   url: string
 }
 
+
 export default function ProjectCard(props: ProjectCardProps) {
   return (
     <div
       className={
-        styles.card + " border-dotted border-2 p-4 h-full w-full"
+        styles.card + " border-dotted border-2 p-4 w-full h-[130px] sm:h-[160px]"
       }
       onClick={() => {
         window.open(`https://github.com/kraken-afk/${props.title}`, '_blank');
@@ -23,8 +24,8 @@ export default function ProjectCard(props: ProjectCardProps) {
       >
         {props.title}
       </span>
-      <p>{props.description}</p>
-      { props.url !== "" ? <a className="inline-block mt-3" target="_blank" href={anchorValidate(props.url)} onClick={(event) => event.stopPropagation()}>
+      <p className={styles.truncate}>{props.description}</p>
+      { props.url !== "" ? <a className="inline-block truncate" target="_blank" href={anchorValidate(props.url)} onClick={(event) => event.stopPropagation()}>
         {domainExtractor(props.url)}
       </a> : <div className="mt-3"></div> }
       <div

@@ -171,7 +171,7 @@ export default function Home({ repos }: HomeProps) {
           <a
             className={
               styles.highlight +
-              " block underline underline-offset-4 hover:outline-dotted outline-1 my-4"
+              " block underline underline-offset-4 hover:outline-dotted outline-1 my-4 w-min"
             }
             href="https://github.com/kraken-afk"
           >
