@@ -41,6 +41,11 @@ export default function Home({ repos }: HomeProps) {
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
         <meta name="theme-color" content="#000" />
         <meta name="description" content="Frontend enthusiast." />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="nv &bull; home" />
+        <meta property="og:url" content="https://nv-me.vercel.app" />
+        <meta property="og:image" content="/next-me.og.png" />
+        <meta property="og:description" content="Frontend enthusiast" />
         <title>nv &bull; home</title>
         <link rel="icon" type="image/jpg" href="/profile.jpg" />
       </Head>
@@ -134,13 +139,13 @@ export default function Home({ repos }: HomeProps) {
           </span>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {repos.data.user.pinnedItems.nodes.map((repo) => (
-                <ProjectCard
-                  key={repo.name}
-                  title={repo.name}
-                  description={repo.description}
-                  color={repo.primaryLanguage.color}
-                  url={repo.homepageUrl}
-                />
+              <ProjectCard
+                key={repo.name}
+                title={repo.name}
+                description={repo.description}
+                color={repo.primaryLanguage.color}
+                url={repo.homepageUrl}
+              />
             ))}
           </div>
           <a
