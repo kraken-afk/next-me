@@ -10,8 +10,6 @@ interface ProjectCardProps {
 export default function ProjectCard(props: ProjectCardProps) {
   return (
     <div
-      // href={`https://github.com/kraken-afk/${props.title}`}
-      // target="_blank"
       className={
         styles.card + " border-dotted border-2 p-4 h-full w-full"
       }
