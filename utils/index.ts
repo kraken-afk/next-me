@@ -13,9 +13,7 @@ export function anchorValidate(a: string): string {
   if (/^https?:\/\//.test(a)) return a;
   let domain = "";
 
-  if (/\/\//.test(a)) domain = domainExtractor(a);
-
-  return "https://" + domain;
+  return "https://" + a;
 }
 
 export function domainExtractor(a: string): string {
