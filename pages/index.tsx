@@ -44,12 +44,12 @@ export default function Home({ repos }: HomeProps) {
         <meta property="og:url" content="https://nv-me.vercel.app/" />
         <meta property="og:title" content="nv • home" />
         <meta property="og:description" content="Frontend enthusiast." />
-        <meta property="og:image" content="https://lh3.googleusercontent.com/u/0/drive-viewer/AITFw-zJlDKL3DmgD7hWWcL_4NQI9soFdrhRiZ26F6w1oPY512-mFhJ0nfGTSsNdcppycASYzCEpjOCC_tPMyS7ILSYcVrIg2Q=1200-h630" />
-        <meta property="twitter:card" content="https://lh3.googleusercontent.com/u/0/drive-viewer/AITFw-zJlDKL3DmgD7hWWcL_4NQI9soFdrhRiZ26F6w1oPY512-mFhJ0nfGTSsNdcppycASYzCEpjOCC_tPMyS7ILSYcVrIg2Q=1200-h630" />
+        <meta property="og:image" content="https://lh3.googleusercontent.com/u/0/drive-viewer/AITFw-zJlDKL3DmgD7hWWcL_4NQI9soFdrhRiZ26F6w1oPY512-mFhJ0nfGTSsNdcppycASYzCEpjOCC_tPMyS7ILSYcVrIg2Q=w1366-h661" />
+        <meta property="twitter:card" content="https://lh3.googleusercontent.com/u/0/drive-viewer/AITFw-zJlDKL3DmgD7hWWcL_4NQI9soFdrhRiZ26F6w1oPY512-mFhJ0nfGTSsNdcppycASYzCEpjOCC_tPMyS7ILSYcVrIg2Q=w1366-h661" />
         <meta property="twitter:url" content="https://nv-me.vercel.app/" />
         <meta property="twitter:title" content="nv • home" />
         <meta property="twitter:description" content="Frontend enthusiast." />
-        <meta property="twitter:image" content="https://lh3.googleusercontent.com/u/0/drive-viewer/AITFw-zJlDKL3DmgD7hWWcL_4NQI9soFdrhRiZ26F6w1oPY512-mFhJ0nfGTSsNdcppycASYzCEpjOCC_tPMyS7ILSYcVrIg2Q=1200-h630" />
+        <meta property="twitter:image" content="https://lh3.googleusercontent.com/u/0/drive-viewer/AITFw-zJlDKL3DmgD7hWWcL_4NQI9soFdrhRiZ26F6w1oPY512-mFhJ0nfGTSsNdcppycASYzCEpjOCC_tPMyS7ILSYcVrIg2Q=w1366-h661" />
       </Head>
       <main className={inter.className}>
         <div className="mb-3">
