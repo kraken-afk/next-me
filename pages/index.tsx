@@ -36,18 +36,20 @@ export default function Home({ repos }: HomeProps) {
   return (
     <>
       <Head>
-        <meta httpEquiv="Content-Type" content="text/html;charset=UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="theme-color" content="#000" />
+        <title>nv • home</title>
+        <meta name="title" content="nv • home" />
         <meta name="description" content="Frontend enthusiast." />
-        <meta property="og:type" content="website" />
-        <meta property="og:title" content="nv &bull; home" />
-        <meta property="og:url" content="https://nv-me.vercel.app" />
-        <meta property="og:image" content="/next-me.og.png" />
-        <meta property="og:description" content="Frontend enthusiast" />
-        <title>nv &bull; home</title>
         <link rel="icon" type="image/jpg" href="/profile.jpg" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://nv-me.vercel.app/" />
+        <meta property="og:title" content="nv • home" />
+        <meta property="og:description" content="Frontend enthusiast." />
+        <meta property="og:image" content="/next-me.og.webp" />
+        <meta property="twitter:card" content="/next-me.og.webp" />
+        <meta property="twitter:url" content="https://nv-me.vercel.app/" />
+        <meta property="twitter:title" content="nv • home" />
+        <meta property="twitter:description" content="Frontend enthusiast." />
+        <meta property="twitter:image" content="/next-me.og.webp" />
       </Head>
       <main className={inter.className}>
         <div className="mb-3">
