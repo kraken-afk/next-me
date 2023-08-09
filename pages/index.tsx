@@ -40,7 +40,7 @@ export default function Home({ repos }: HomeProps) {
         <meta name="title" content="nv • home" />
         <meta name="description" content="Frontend enthusiast." />
         <link rel="icon" type="image/jpg" href="/profile.jpg" />
-        <meta property="og:type" content="article" />
+        <meta property="og:type" content="website" />
         <meta property="og:url" content="https://nv-me.vercel.app/" />
         <meta property="og:title" content="nv • home" />
         <meta property="og:description" content="Frontend enthusiast." />
@@ -147,6 +147,7 @@ export default function Home({ repos }: HomeProps) {
               draggable="false"
               src={`https://skillicons.dev/icons?i=${skill}`}
               alt={skill}
+              title={`${skill} icon`}
               width={48}
               height={48}
             />
