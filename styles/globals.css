@@ -26,6 +26,21 @@ body {
     rgb(var(--background-start-rgb));
 }
 
+*::selection {
+  @apply bg-sky-200 text-zinc-900;
+}
+
+img::selection {
+  background: transparent;
+}
+
 .debug {
   border: 1px solid red;
+}
+
+
+@media screen and (max-width: 640px) {
+  * {
+    font-size: .978em;
+  }
 }

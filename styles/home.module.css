@@ -6,3 +6,16 @@
 .highlight {
   @apply text-zinc-100;
 }
+
+.list {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(48px, 1fr));
+  gap: 1rem;
+}
+
+@media screen and (max-width: 640px) {
+  .list {
+    gap: .5rem
+  }
+}

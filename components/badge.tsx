@@ -1,4 +1,4 @@
-import styles from './badge.module.css';
+import styles from '~/styles/badge.module.css';
 
 interface BadgeProps {
   badgeType: 'warn' | 'err' | 'reguler'

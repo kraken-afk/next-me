@@ -1,17 +1,44 @@
-import { Inter } from 'next/font/google'
-import Head from 'next/head'
+import { Inter } from "next/font/google";
+import { myAge } from "~/utils";
+import Head from "next/head";
 import styles from "~/styles/home.module.css";
-import Badge from '~/components/badge';
+import Badge from "~/components/badge";
+import Footer from "~/components/footer";
+import {
+  pinnedReposQueryBuilder,
+  type pinnedReposType,
+} from "~/queries/pinnedRepos.query";
+import ProjectCard from "../components/project-card";
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ["latin"] });
 
-export default function Home() {
+interface HomeProps {
+  repos: pinnedReposType;
+}
+
+export default function Home({ repos }: HomeProps) {
+  const skill_list: string[] = [
+    "typescript",
+    "next",
+    "react",
+    "deno",
+    "nodejs",
+    "tailwind",
+    "babel",
+    "vite",
+    "graphql",
+    "git",
+    "github",
+    "lit",
+    "sass",
+  ];
+
   return (
     <>
       <Head>
-        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+        <meta httpEquiv="Content-Type" content="text/html;charset=UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
         <meta name="theme-color" content="#000" />
         <title>nv &bull; home</title>
         <link rel="icon" type="image/jpg" href="/profile.jpg" />
@@ -19,21 +46,25 @@ export default function Home() {
       <main className={inter.className}>
         <div className="mb-3">
           <Badge badgeType="warn">
-            Hi, currenly im looking for a remote internship/junior role, if you
+            Hi, currently im looking for a remote internship/junior role, if you
             interested to hire me, don't hesitate to reach me.
           </Badge>
         </div>
-        <section>
+        <section className="mt-6">
+          <span className="inline-block text-lg mb-2" id="about">
+            <span className="text-xl text-zinc-700">#</span> About me
+          </span>
           <p className={styles.description + " mb-4"}>
             Hi there, I'm{" "}
-            <span className={styles.highlight}>Romeo noveanre</span>. I'm a 18
-            years and im from Indonesia, i've been doing code since{" "}
+            <span className={styles.highlight}>Romeo noveanre</span>. I'm{" "}
+            {myAge()} y/o and im from Indonesia, i've been doing code since{" "}
             <span className={styles.highlight}> early 2020.</span> I used to
             code with <span className={styles.highlight}>front-end</span>, but i
             do <span className={styles.highlight}>back-end</span> also.
           </p>
           <p className={styles.description + " mb-4"}>
-            Graduated from vocational school with CS major. as well with
+            Graduated from vocational school with{" "}
+            <span className={styles.highlight}>CS major</span>. as well with
             informal education at{" "}
             <a
               className={
@@ -83,7 +114,61 @@ export default function Home() {
             <span className={styles.highlight}>Js ecosystem.</span>
           </p>
         </section>
+        <section className={styles.list + " my-4  fill-zinc-400"}>
+          {skill_list.map((skill) => (
+            <img
+              key={skill}
+              className="pointer-events-none"
+              draggable="false"
+              src={`https://skillicons.dev/icons?i=${skill}`}
+              alt={skill}
+              width={48}
+              height={48}
+            />
+          ))}
+        </section>
+        <section className="mt-6">
+          <span className="inline-block text-lg mb-2">
+            <span className="text-xl text-zinc-700">#</span> Projects
+          </span>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {repos.data.user.pinnedItems.nodes.map((repo) => (
+                <ProjectCard
+                  key={repo.name}
+                  title={repo.name}
+                  description={repo.description}
+                  color={repo.primaryLanguage.color}
+                  url={repo.homepageUrl}
+                />
+            ))}
+          </div>
+          <a
+            className={
+              styles.highlight +
+              " block underline underline-offset-4 hover:outline-dotted outline-1 my-4"
+            }
+            href="https://github.com/kraken-afk"
+          >
+            more &rarr;
+          </a>
+        </section>
       </main>
+      <Footer />
     </>
   );
+}
+
+export async function getServerSideProps() {
+  const response = await fetch("https://api.github.com/graphql", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Accept: "application/json",
+      Authorization: `bearer ${process.env.GITHUB_TOKEN as string}`,
+    },
+    body: JSON.stringify({ query: pinnedReposQueryBuilder("kraken-afk") }),
+  });
+  const pinnedRepos = await response.json();
+
+  return { props: { repos: pinnedRepos } };
 }

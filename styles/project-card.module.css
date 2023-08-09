@@ -1,0 +1,21 @@
+.card {
+  @apply text-neutral-400 relative transition-all duration-75 cursor-pointer;
+  line-height: 1.6em;
+}
+
+.card:hover {
+  @apply bg-neutral-900;
+}
+
+.card a {
+  @apply text-zinc-100 underline underline-offset-4 hover:outline-dotted outline-1;
+}
+
+.title::before {
+  content: "";
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
