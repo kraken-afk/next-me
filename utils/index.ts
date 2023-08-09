@@ -1,26 +1,24 @@
 export function myAge(): number {
-    const { floor } = Math;
-    const { day, month, year } = { day: 11, month: 11, year: 2004 };
-    const currentDate = new Date();
-    const inputDate = new Date(year, month - 1, day);
-    const timeDiff = currentDate.getTime() - inputDate.getTime();
-    const yearDiff = floor(timeDiff / (1000 * 60 * 60 * 24 * 365.25));
+  const { floor } = Math;
+  const { day, month, year } = { day: 11, month: 11, year: 2004 };
+  const currentDate = new Date();
+  const inputDate = new Date(year, month - 1, day);
+  const timeDiff = currentDate.getTime() - inputDate.getTime();
+  const yearDiff = floor(timeDiff / (1000 * 60 * 60 * 24 * 365.25));
 
-    return yearDiff;
+  return yearDiff;
 }
 
 export function anchorValidate(a: string): string {
-    if (/^https?:\/\//.test(a)) return a;
-    let domain = "";
+  if (/^https?:\/\//.test(a)) return a;
+  let domain = "";
 
-    if (/\/\//.test(a))
-        domain = domainExtractor(a);
+  if (/\/\//.test(a)) domain = domainExtractor(a);
 
-    return "https://" + domain;
+  return "https://" + domain;
 }
 
 export function domainExtractor(a: string): string {
-    if (/\/\//.test(a))
-        return a;
-    return a.split(/\/\//).splice(1).join("");
+  if (!/\/\//.test(a)) return a;
+  return a.split(/\/\//).splice(1).join("");
 }
