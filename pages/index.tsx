@@ -44,12 +44,29 @@ export default function Home({ repos }: HomeProps) {
         <meta property="og:url" content="https://nv-me.vercel.app/" />
         <meta property="og:title" content="nv • home" />
         <meta property="og:description" content="Frontend enthusiast." />
-        <meta property="og:image" content="https://lh3.googleusercontent.com/u/0/drive-viewer/AITFw-zJlDKL3DmgD7hWWcL_4NQI9soFdrhRiZ26F6w1oPY512-mFhJ0nfGTSsNdcppycASYzCEpjOCC_tPMyS7ILSYcVrIg2Q=w1366-h661" />
+        <meta
+          property="og:image"
+          content="https://lh3.googleusercontent.com/u/0/drive-viewer/AITFw-zJlDKL3DmgD7hWWcL_4NQI9soFdrhRiZ26F6w1oPY512-mFhJ0nfGTSsNdcppycASYzCEpjOCC_tPMyS7ILSYcVrIg2Q=w1366-h661"
+        />
+
         <meta property="twitter:card" content="summary_large_image" />
         <meta property="twitter:url" content="https://nv-me.vercel.app/" />
         <meta property="twitter:title" content="nv • home" />
         <meta property="twitter:description" content="Frontend enthusiast." />
-        <meta property="twitter:image" content="https://lh3.googleusercontent.com/u/0/drive-viewer/AITFw-zJlDKL3DmgD7hWWcL_4NQI9soFdrhRiZ26F6w1oPY512-mFhJ0nfGTSsNdcppycASYzCEpjOCC_tPMyS7ILSYcVrIg2Q=w1366-h661" />
+        <meta
+          property="twitter:image"
+          content="https://lh3.googleusercontent.com/u/0/drive-viewer/AITFw-zJlDKL3DmgD7hWWcL_4NQI9soFdrhRiZ26F6w1oPY512-mFhJ0nfGTSsNdcppycASYzCEpjOCC_tPMyS7ILSYcVrIg2Q=w1366-h661"
+        />
+        <meta
+          data-rh="true"
+          name="twitter:image:alt"
+          content="Romeo Noeanre profile website"
+        />
+        <meta data-rh="true" name="twitter:image:width" content="1366" />
+        <meta data-rh="true" name="twitter:image:height" content="661" />
+        <meta name="twitter:site" content="@trshppl" />
+        <meta name="twitter:creator" content="@trshppl" />
+        <meta name="twitter:creator:id" content="@trshppl" />
       </Head>
       <main className={inter.className}>
         <div className="mb-3">
