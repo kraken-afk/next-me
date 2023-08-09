@@ -11,8 +11,6 @@ export function myAge(): number {
 
 export function anchorValidate(a: string): string {
   if (/^https?:\/\//.test(a)) return a;
-  let domain = "";
-
   return "https://" + a;
 }
 
