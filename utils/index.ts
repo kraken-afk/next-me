@@ -20,5 +20,7 @@ export function anchorValidate(a: string): string {
 }
 
 export function domainExtractor(a: string): string {
+    if (/\/\//.test(a))
+        return a;
     return a.split(/\/\//).splice(1).join("");
 }
