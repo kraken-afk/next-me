@@ -89,7 +89,7 @@ export default function Home({ repos }: HomeProps) {
           </p>
           <p className={styles.description + " mb-4"}>
             Graduated from vocational school with{" "}
-            <span className={styles.highlight}>CS major</span>. as well with
+            <span className={styles.highlight}>SE major</span>. as well with
             informal education at{" "}
             <a
               className={
