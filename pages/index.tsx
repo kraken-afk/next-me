@@ -150,10 +150,12 @@ export default function Home({ repos }: HomeProps) {
               title={`${skill} icon`}
               width={48}
               height={48}
+              sizes="48px"
             />
           ))}
         </section>
-        <section className="mt-6">
+
+        <section className="mt-16">
           <span className="inline-block text-lg mb-2">
             <span className="text-xl text-zinc-700">#</span> Projects
           </span>
@@ -165,6 +167,8 @@ export default function Home({ repos }: HomeProps) {
                 description={repo.description}
                 color={repo.primaryLanguage.color}
                 url={repo.homepageUrl}
+                star={repo.stargazerCount}
+                fork={repo.forkCount}
               />
             ))}
           </div>

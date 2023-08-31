@@ -10,6 +10,8 @@ export type pinnedReposType = {
             name: string;
           };
           homepageUrl: string;
+          stargazerCount: number;
+          forkCount: number;
         }>;
       };
     };
@@ -18,8 +20,8 @@ export type pinnedReposType = {
 
 export function pinnedReposQueryBuilder(user: string): string {
   return `{
-      user(login: "${user}") {
-        pinnedItems(first: 6, types: REPOSITORY) {
+        user(login: "${user}") {
+         pinnedItems(first: 6, types: REPOSITORY) {
           nodes {
             ... on Repository {
               name
@@ -29,6 +31,8 @@ export function pinnedReposQueryBuilder(user: string): string {
                 name
               }
               homepageUrl
+              stargazerCount
+              forkCount
             }
           }
         }

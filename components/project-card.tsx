@@ -1,21 +1,46 @@
-import { title } from "process";
 import styles from "~/styles/project-card.module.css";
 import { anchorValidate, domainExtractor } from "~/utils";
+import { Star } from "./icons/star";
+import { Fork } from "./icons/fork";
+import { useEffect, useRef } from "react";
 
 interface ProjectCardProps {
   title: string;
   description: string;
   color: string;
-  url: string
+  url: string;
+  star: number;
+  fork: number;
 }
 
 
 export default function ProjectCard(props: ProjectCardProps) {
+  const cardRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const element = cardRef.current;
+
+    if (!element) return;
+
+    const option = {
+      root: document,
+      rootMargin: '4px',
+      threshold: 1.0
+    }
+    const observer = new IntersectionObserver((entries) => {
+      if (entries[0].intersectionRatio >= 1 && !element.classList.contains(styles.active))
+        element.classList.add(styles.active);
+    }, option);
+
+    observer.observe(element);
+  }, []);
+
   return (
     <div
       className={
         styles.card + " border-dotted border-2 p-4 w-full h-[130px] sm:h-[160px]"
       }
+      ref={cardRef}
       onClick={() => {
         window.open(`https://github.com/kraken-afk/${props.title}`, '_blank');
       }}
@@ -26,13 +51,12 @@ export default function ProjectCard(props: ProjectCardProps) {
         {props.title}
       </span>
       <p className={styles.truncate}>{props.description}</p>
-      { props.url !== "" ? <a className="inline-block truncate" target="_blank" href={anchorValidate(props.url)} onClick={(event) => event.stopPropagation()}>
+      {props.url !== "" ? <a className="inline-block truncate" target="_blank" href={anchorValidate(props.url)} onClick={(event) => event.stopPropagation()}>
         {domainExtractor(props.url)}
-      </a> : <div className="mt-3"></div> }
-      <div className="flex gap-2">
-        <img src={`https://img.shields.io/github/stars/kraken-afk/${props.title}.svg`} alt="total stars" />
-        <img src={`https://img.shields.io/github/forks/kraken-afk/${props.title}.svg`} alt="total forks" />
-        <img src={`https://img.shields.io/github/watchers/kraken-afk/${props.title}.svg`} alt="total watchers" />
+      </a> : <div className="mt-3"></div>}
+      <div className="flex gap-2 absolute right-2 top-2">
+        {!!props.star && <span className="text-neutral-300 flex gap-1 items-center text-sm">{props.star} <Star className="fill-neutral-300" /></span>}
+        {!!props.fork && <span className="text-neutral-300 flex gap-1 items-center text-sm">{props.fork} <Fork className="fill-neutral-300" /></span>}
       </div>
       <div
         style={{ backgroundColor: props.color }}

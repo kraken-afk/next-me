@@ -4,6 +4,16 @@
   display: grid;
   grid-template-rows: 16px 1fr 22px;
   gap: 1rem;
+
+  transform: translateY(5vh);
+  opacity: 0;
+
+  transition: all ease-out 350ms;
+}
+
+.active {
+  transform: translateY(0vh);
+  opacity: 1;
 }
 
 .card:hover {
