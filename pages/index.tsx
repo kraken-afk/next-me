@@ -1,14 +1,17 @@
 import { Inter } from "next/font/google";
 import { myAge } from "~/utils";
+import classNames from "classnames";
+
 import Head from "next/head";
 import styles from "~/styles/home.module.css";
 import Badge from "~/components/badge";
 import Footer from "~/components/footer";
+import ProjectCard from "~/components/project-card";
 import {
   pinnedReposQueryBuilder,
   type pinnedReposType,
 } from "~/queries/pinnedRepos.query";
-import ProjectCard from "~/components/project-card";
+
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,6 +20,7 @@ interface HomeProps {
 }
 
 export default function Home({ repos }: HomeProps) {
+  const cn = classNames;
   const skill_list: string[] = [
     "typescript",
     "next",
@@ -79,7 +83,7 @@ export default function Home({ repos }: HomeProps) {
           <span className="inline-block text-lg mb-2" id="about">
             <span className="text-xl text-zinc-700">#</span> About me
           </span>
-          <p className={styles.description + " mb-4"}>
+          <p className={cn(styles.description, "mb-4")}>
             Hi there, I'm{" "}
             <span className={styles.highlight}>Romeo noveanre</span>. I'm{" "}
             {myAge()} y/o and im from Indonesia, i've been doing code since{" "}
@@ -87,7 +91,7 @@ export default function Home({ repos }: HomeProps) {
             code with <span className={styles.highlight}>front-end</span>, but i
             do <span className={styles.highlight}>back-end</span> also.
           </p>
-          <p className={styles.description + " mb-4"}>
+          <p className={cn(styles.description, "mb-4")}>
             Graduated from vocational school with{" "}
             <span className={styles.highlight}>SE major</span>. as well with
             informal education at{" "}
@@ -102,30 +106,30 @@ export default function Home({ repos }: HomeProps) {
             </a>
             , with several classes including{" "}
             <a
-              className={
-                styles.highlight +
-                " underline underline-offset-4 hover:outline-dotted outline-1"
-              }
+              className={cn(
+                styles.highlight,
+                "underline underline-offset-4 hover:outline-dotted outline-1"
+              )}
               href="https://dicoding.com/certificates/4EXG93W9QZRL"
             >
               Front-end Expert Class
             </a>
             ,{" "}
             <a
-              className={
-                styles.highlight +
-                " underline underline-offset-4 hover:outline-dotted outline-1"
-              }
+              className={cn(
+                styles.highlight,
+                "underline underline-offset-4 hover:outline-dotted outline-1"
+              )}
               href="https://dicoding.com/certificates/ERZRG9LEQPYV"
             >
               AWS practitioner
             </a>
             , and{" "}
             <a
-              className={
-                styles.highlight +
-                " underline underline-offset-4 hover:outline-dotted outline-1"
-              }
+              className={cn(
+                styles.highlight,
+                "underline underline-offset-4 hover:outline-dotted outline-1"
+              )}
               href="https://dicoding.com/users/romeo_noveanre_mslu"
             >
               more.
@@ -139,7 +143,7 @@ export default function Home({ repos }: HomeProps) {
             <span className={styles.highlight}>Js ecosystem.</span>
           </p>
         </section>
-        <section className={styles.list + " my-4  fill-zinc-400"}>
+        <section className={cn(styles.list, "my-4  fill-zinc-400")}>
           {skill_list.map((skill) => (
             <img
               key={skill}
@@ -173,10 +177,10 @@ export default function Home({ repos }: HomeProps) {
             ))}
           </div>
           <a
-            className={
-              styles.highlight +
-              " block underline underline-offset-4 hover:outline-dotted outline-1 my-4"
-            }
+            className={cn(
+              styles.highlight,
+              "block underline underline-offset-4 hover:outline-dotted outline-1 my-4"
+            )}
             href="https://github.com/kraken-afk"
           >
             more &rarr;

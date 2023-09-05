@@ -17,6 +17,9 @@ dependencies:
   autoprefixer:
     specifier: 10.4.14
     version: 10.4.14(postcss@8.4.27)
+  classnames:
+    specifier: ^2.3.2
+    version: 2.3.2
   next:
     specifier: 13.4.12
     version: 13.4.12(react-dom@18.2.0)(react@18.2.0)
@@ -29,6 +32,9 @@ dependencies:
   react-dom:
     specifier: 18.2.0
     version: 18.2.0(react@18.2.0)
+  spltjs:
+    specifier: ^1.1.0
+    version: 1.1.0
   tailwindcss:
     specifier: 3.3.3
     version: 3.3.3
@@ -310,6 +316,10 @@ packages:
       readdirp: 3.6.0
     optionalDependencies:
       fsevents: 2.3.2
+    dev: false
+
+  /classnames@2.3.2:
+    resolution: {integrity: sha512-CSbhY4cFEJRe6/GQzIk5qXZ4Jeg5pcsP7b5peFSDpffpe1cqjASH/n9UTjBwOp6XpMSTwQ8Za2K5V02ueA7Tmw==}
     dev: false
 
   /client-only@0.0.1:
@@ -778,6 +788,10 @@ packages:
   /source-map-js@1.0.2:
     resolution: {integrity: sha512-R0XvVJ9WusLiqTCEiGCmICCMplcCkIwwR11mOSD9CR5u+IXYdiseeEuXCVAjS54zqwkLcPNnmU4OeJ6tUrWhDw==}
     engines: {node: '>=0.10.0'}
+    dev: false
+
+  /spltjs@1.1.0:
+    resolution: {integrity: sha512-ACWucQPj0t5Bd8KohFLop22NpC249nTuwdmxlrG3sPL1+gscSWUtJHUL3weIEAxdF8+bKQfV2jzabl0S2dPBqg==}
     dev: false
 
   /streamsearch@1.1.0:
