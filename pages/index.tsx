@@ -1,7 +1,8 @@
 import { Inter } from "next/font/google";
 import { myAge } from "~/utils";
-import classNames from "classnames";
 
+import classNames from "classnames";
+import Image from "next/image";
 import Head from "next/head";
 import styles from "~/styles/home.module.css";
 import Badge from "~/components/badge";
@@ -11,7 +12,6 @@ import {
   pinnedReposQueryBuilder,
   type pinnedReposType,
 } from "~/queries/pinnedRepos.query";
-
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -96,10 +96,10 @@ export default function Home({ repos }: HomeProps) {
             <span className={styles.highlight}>SE major</span>. as well with
             informal education at{" "}
             <a
-              className={
-                styles.highlight +
-                " underline underline-offset-4 hover:outline-dotted outline-1"
-              }
+              className={cn(
+                styles.highlight,
+                "underline underline-offset-4 hover:outline-dotted outline-1"
+              )}
               href="https://dicoding.id"
             >
               Dicoding academy
@@ -145,7 +145,7 @@ export default function Home({ repos }: HomeProps) {
         </section>
         <section className={cn(styles.list, "my-4  fill-zinc-400")}>
           {skill_list.map((skill) => (
-            <img
+            <Image
               key={skill}
               className="pointer-events-none"
               draggable="false"
