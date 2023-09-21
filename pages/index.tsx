@@ -68,7 +68,7 @@ export default function Home({ repos }: HomeProps) {
         />
         <meta data-rh="true" name="twitter:image:width" content="1366" />
         <meta data-rh="true" name="twitter:image:height" content="661" />
-        <meta name="twitter:site" content="@trshppl" />
+        <meta name="twitter:site" content="https://nv-me.vercel.app/" />
         <meta name="twitter:creator" content="@trshppl" />
         <meta name="twitter:creator:id" content="@trshppl" />
       </Head>
