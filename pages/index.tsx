@@ -42,24 +42,24 @@ export default function Home({ repos }: HomeProps) {
       <Head>
         <title>nv • home</title>
         <meta name="title" content="nv • home" />
-        <meta name="description" content="Frontend enthusiast." />
+        <meta name="description" content="Web dev." />
         <link rel="icon" type="image/jpg" href="/profile.jpg" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://nv-me.vercel.app/" />
         <meta property="og:title" content="nv • home" />
-        <meta property="og:description" content="Frontend enthusiast." />
+        <meta property="og:description" content="Web dev." />
         <meta
           property="og:image"
-          content="https://lh3.googleusercontent.com/u/0/drive-viewer/AITFw-zJlDKL3DmgD7hWWcL_4NQI9soFdrhRiZ26F6w1oPY512-mFhJ0nfGTSsNdcppycASYzCEpjOCC_tPMyS7ILSYcVrIg2Q=w1366-h661"
+          content="/next-me.og.webp"
         />
 
         <meta property="twitter:card" content="summary_large_image" />
         <meta property="twitter:url" content="https://nv-me.vercel.app/" />
         <meta property="twitter:title" content="nv • home" />
-        <meta property="twitter:description" content="Frontend enthusiast." />
+        <meta property="twitter:description" content="Web dev." />
         <meta
           property="twitter:image"
-          content="https://lh3.googleusercontent.com/u/0/drive-viewer/AITFw-zJlDKL3DmgD7hWWcL_4NQI9soFdrhRiZ26F6w1oPY512-mFhJ0nfGTSsNdcppycASYzCEpjOCC_tPMyS7ILSYcVrIg2Q=w1366-h661"
+          content="/next-me.og.webp"
         />
         <meta
           data-rh="true"
