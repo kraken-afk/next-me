@@ -50,7 +50,7 @@ export default function Home({ repos }: HomeProps) {
         <meta property="og:description" content="Web dev." />
         <meta
           property="og:image"
-          content="/next-me.og.webp"
+          content="https://nv-me.vercel.app/next-me.og.webp"
         />
 
         <meta property="twitter:card" content="summary_large_image" />
@@ -59,7 +59,7 @@ export default function Home({ repos }: HomeProps) {
         <meta property="twitter:description" content="Web dev." />
         <meta
           property="twitter:image"
-          content="/next-me.og.webp"
+          content="https://nv-me.vercel.app/next-me.og.webp"
         />
         <meta
           data-rh="true"
